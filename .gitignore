@@ -1,3 +1,6 @@
 temp/
 .vscode/
-app-assets/
+app-assets/images
+app-assets/css
+app-assets/fonsts
+temp/
