@@ -1,5 +1,5 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT'].'/catasys/access.php'); ///Conecion General Al ROOT
+include_once($_SERVER['DOCUMENT_ROOT'].'/catasysAdmin/access.php'); ///Conecion General Al ROOT
 include (INCLUDE_PATH.'load.php');///Cargar Datos
 /*--------------------------------------------------------------*/
 /* Function for find all database table rows by table name
