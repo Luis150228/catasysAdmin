@@ -1,12 +1,15 @@
 $(document).ready(function () {
     const btnInfo = document.getElementsByClassName('btn-info');
 
-    showDias();
-    $('#frm_dias').submit(()=>{
-        diasSave();
-      });
+    // showValores();
+    // $('#frm_dias').submit(()=>{
+    //     diasSave();
+    //   });
+
+    searchValores();
+
     $('#buscar').keyup(()=>{
-        searchDias();
+        searchValores();
       });
 
     $('#delete').click(()=>{
@@ -22,84 +25,86 @@ const descripcion = document.querySelector('#descripcion');
 const f_ini = document.querySelector('#f_ini');
 const f_fin = document.querySelector('#f_fin');
 
-function diasSave() {
-    event.preventDefault();
-    let registros = $('#frm_dias').serialize();
-    // console.log(registros);
-    // return;
-    $.ajax({
-      type: 'POST',
-      url: '../ajax/recordSaveDiaH.php',
-      data: registros,
-      beforeSend: function (objeto) {
-        $('#mensajes').html(`
-        <div class="alert alert-icon-right alert-warning alert-dismissible mb-2" role="alert">
-            <span class="alert-icon"><i class="la la-warning"></i></span>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">×</span>
-            </button>
-            <strong>Espere!</strong> guardando ...</a>.
-        </div>
-    `);
-      },
-      success: function (data) {
-        let datos = JSON.parse(data);
+// function diasSave() {
+//     event.preventDefault();
+//     let registros = $('#frm_dias').serialize();
+//     // console.log(registros);
+//     // return;
+//     $.ajax({
+//       type: 'POST',
+//       url: '../ajax/recordSaveDiaH.php',
+//       data: registros,
+//       beforeSend: function (objeto) {
+//         $('#mensajes').html(`
+//         <div class="alert alert-icon-right alert-warning alert-dismissible mb-2" role="alert">
+//             <span class="alert-icon"><i class="la la-warning"></i></span>
+//             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+//                 <span aria-hidden="true">×</span>
+//             </button>
+//             <strong>Espere!</strong> guardando ...</a>.
+//         </div>
+//     `);
+//       },
+//       success: function (data) {
+//         let datos = JSON.parse(data);
   
-        if (datos.codigo == '200' || datos.id >= '1') {
-          $('#mensajes').html(`
-            <div class="alert alert-icon-left alert-success alert-dismissible mb-2" role="alert">
-                <span class="alert-icon"><i class="la la-thumbs-o-up"></i></span>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-                <strong>Correcto!</strong> ${datos.mensaje}.
-            </div>
-            `);
-            descripcion.value = '';
-            f_ini.value = '';
-            f_fin.value = '';
-            showDias();
-        } else if(datos.respuesta == 'fallo'){
-          $('#mensajes').html(`
-        <div class="alert alert-icon-left alert-danger alert-dismissible mb-2" role="alert">
-            <span class="alert-icon"><i class="la la-thumbs-o-down"></i></span>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">×</span>
-            </button>
-            <strong>Tenemos un problema!</strong> no se agrego la fecha <a href="#" class="alert-link">${datos.id}</a> reintente el guardar.
-        </div>
-    `); 
-        } 
-      },
-    });
-    return false;
-  }
+//         if (datos.codigo == '200' || datos.id >= '1') {
+//           $('#mensajes').html(`
+//             <div class="alert alert-icon-left alert-success alert-dismissible mb-2" role="alert">
+//                 <span class="alert-icon"><i class="la la-thumbs-o-up"></i></span>
+//                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+//                     <span aria-hidden="true">×</span>
+//                 </button>
+//                 <strong>Correcto!</strong> ${datos.mensaje}.
+//             </div>
+//             `);
+//             descripcion.value = '';
+//             f_ini.value = '';
+//             f_fin.value = '';
+//             showDias();
+//         } else if(datos.respuesta == 'fallo'){
+//           $('#mensajes').html(`
+//         <div class="alert alert-icon-left alert-danger alert-dismissible mb-2" role="alert">
+//             <span class="alert-icon"><i class="la la-thumbs-o-down"></i></span>
+//             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+//                 <span aria-hidden="true">×</span>
+//             </button>
+//             <strong>Tenemos un problema!</strong> no se agrego la fecha <a href="#" class="alert-link">${datos.id}</a> reintente el guardar.
+//         </div>
+//     `); 
+//         } 
+//       },
+//     });
+//     return false;
+//   }
 
-  function showDias() {
-    let registros = $('#frm_dias').serialize();
-    $.ajax({
-      type: 'POST',
-      url: '../ajax/recodDrawDiaInhabil.php',
-      data: registros,
-      beforeSend: function (objeto) {
-        $("#content-dia").html("Buscando...");
-      },
-      success: function (data) {
-        $('#content-dia').html(data);
-      },
-    });
-    return false;
-  }
+//   function showValores() {
+//     let registros = $('#frm_dias').serialize();
+//     $.ajax({
+//       type: 'POST',
+//       url: '../ajax/recodDrawValores.php',
+//       data: registros,
+//       beforeSend: function (objeto) {
+//         $("#content-valor").html("Buscando...");
+//       },
+//       success: function (data) {
+//         $('#content-valor').html(data);
+//       },
+//     });
+//     return false;
+//   }
   
-  function searchDias() {
+  function searchValores() {
     let registros = $('#frm-buscar').serialize();
     $.ajax({
       type: 'POST',
-      url: '../ajax/recodDrawDiaInhabil.php',
+      url: '../ajax/recodDrawValores.php',
       data: registros,
-      beforeSend: function (objeto) {},
+      beforeSend: function (objeto) {
+        $("#content-valor").html("Buscando...");
+      },
       success: function (data) {
-        $('#content-dia').html(data);
+        $('#content-valor').html(data);
       },
     });
     return false;
@@ -142,7 +147,7 @@ function diasDelete() {
             </div>
             `);
             // showDias();
-            window.location="./frontEditDias.php";
+            window.location="./frontEditValores.php";
         } else if(datos.respuesta == 'fallo'){
           $('#mensajes').html(`
         <div class="alert alert-icon-left alert-danger alert-dismissible mb-2" role="alert">
@@ -193,7 +198,7 @@ function diasDelete() {
             </div>
             `);
             // showDias();
-            window.location="./frontEditDias.php";
+            window.location="./frontEditValores.php";
         } else if(datos.respuesta == 'fallo'){
           $('#mensajes').html(`
         <div class="alert alert-icon-left alert-danger alert-dismissible mb-2" role="alert">

@@ -3,14 +3,12 @@
 <!-- BEGIN: Head-->
 <head>
 <?php
-include_once($_SERVER['DOCUMENT_ROOT'].'/catasysAdmin/access.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/catasys/access.php');
 ?>
 <?php
 include (INCLUDE_PATH.'load.php');
 include (LAYOUTSAPP_PATH.'head.php');
 page_require_level(2);
-$data_form = folioModal($_GET['id']);
-$fomatoTD = dataValores('valores', 'AVISO TRASLADO');
 ?>
 </head>
 
@@ -36,13 +34,13 @@ $fomatoTD = dataValores('valores', 'AVISO TRASLADO');
             <div class="content-header-light col-12">
                 <div class="row">
                     <div class="content-header-left col-md-9 col-12 mb-2">
-                        <h3 class="content-header-title">CATOVATECH</h3>
+                        <h3 class="content-header-title">CATASYS</h3>
                         <div class="row breadcrumbs-top">
                             <div class="breadcrumb-wrapper col-12">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="home.php">Home</a>
                                     </li>
-                                    <li class="breadcrumb-item"><a href="#">Administracion</a>
+                                    <li class="breadcrumb-item"><a href="#">Dias Inhabiles</a>
                                     </li>
                                     <li class="breadcrumb-item active">Sistema de Catastro
                                     </li>
@@ -63,13 +61,6 @@ $fomatoTD = dataValores('valores', 'AVISO TRASLADO');
             <div class="content-body">
                 <!-- Zero configuration table -->
                 <section id="sizing">
-                    <div class="row">
-                        <div class="col-12 mt-3 mb-1">
-                            <h4 class="text-uppercase">Valores</h4>
-                            <p>Puede consultar o modificar los valores para el calculo del traslado asi como su sustento legal.</p>
-                        </div>
-                    </div>
-
                     <div class="row">
                         <div class="col-md-4">
                             <div class="card">

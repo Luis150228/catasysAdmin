@@ -1,6 +1,6 @@
 <?php
 // require('fpdf.php');
-include_once($_SERVER['DOCUMENT_ROOT'].'/catasysAdmin/access.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/catasys/access.php');
 include (PDF_PATH.'fpdf.php');
 include (INCLUDE_PATH.'load.php');
 include (QR_PATH.'qrlib.php');

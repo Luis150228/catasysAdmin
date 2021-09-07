@@ -3,7 +3,7 @@
 <!-- BEGIN: Head-->
 <head>
 <?php
-include_once($_SERVER['DOCUMENT_ROOT'].'/catasysAdmin/access.php'); ///Conexion General Al ROOT
+include_once($_SERVER['DOCUMENT_ROOT'].'/catasys/access.php'); ///Conexion General Al ROOT
 include (INCLUDE_PATH.'load.php');///Cargar Datos
 if($session->isUserLoggedIn(true)) { redirect('./home.php', false);}
 ?>
@@ -32,7 +32,7 @@ include (LAYOUTS_PATH.'head.php');
                             <div class="card border-grey border-lighten-3 m-0">
                                 <div class="card-header border-0">
                                     <div class="card-title text-center">
-                                        <div class="p-1"><img src="./app-assets/images/logo/logo-dark.png" alt="branding logo"></div>
+                                        <div class="p-1"><img src="./app-assets/images/logo/logo-80x80.png" alt="branding logo"></div>
                                     </div>
                                 </div>
                                 <div class="card-content">
@@ -60,13 +60,6 @@ include (LAYOUTS_PATH.'head.php');
                                             </div>
                                             <button type="submit" class="btn btn-outline-info btn-block"><i class="ft-unlock"></i> Ingresar</button>
                                         </form>
-                                    </div>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="">
-                                        <p class="float-xl-left text-center m-0"><a href="recover-password.html" class="card-link">Recover
-                                                password</a></p>
-                                        <p class="float-xl-right text-center m-0">New to Moden Admin? <a href="register-simple.html" class="card-link">Sign Up</a></p>
                                     </div>
                                 </div>
                             </div>

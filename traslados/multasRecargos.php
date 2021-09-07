@@ -3,7 +3,7 @@
 <!-- BEGIN: Head-->
 <head>
 <?php
-include_once($_SERVER['DOCUMENT_ROOT'].'/catasysAdmin/access.php'); ///Conexion General Al ROOT
+include_once($_SERVER['DOCUMENT_ROOT'].'/catasys/access.php'); ///Conexion General Al ROOT
 ?>
 <?php
 include (INCLUDE_PATH.'load.php');

@@ -15,7 +15,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class=" nav-item"><a href="#"><i class="mbri-database"></i><span class="menu-title" data-i18n="Add Ons">Dias Inhabiles</span></a>
+                <li class=" nav-item"><a href="./traslados/frontEditDias.php"><i class="mbri-database"></i><span class="menu-title" data-i18n="Add Ons">Dias Inhabiles</span></a>
                 </li>
                 <li class=" nav-item"><a href="#"><i class="mbri-growing-chart"></i><span class="menu-title" data-i18n="Charts">Rep Excel</span></a>
                 </li>

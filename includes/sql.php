@@ -1,5 +1,5 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT'].'/catasysAdmin/access.php'); ///Conecion General Al ROOT
+include_once($_SERVER['DOCUMENT_ROOT'].'/catasys/access.php'); ///Conecion General Al ROOT
 include (INCLUDE_PATH.'load.php');///Cargar Datos
 /*--------------------------------------------------------------*/
 /* Function for find all database table rows by table name
@@ -370,6 +370,18 @@ function folioModal($id){
 function mostrarDias($id){
   global $db;
           $sql = $db->query("SELECT fecha_text as descripcion, fecha_inicio, fecha_fin, anhio FROM t_diasInhabiles where idt_diasInhabiles = '{$id}'");
+          if($result = $db->fetch_assoc($sql))
+            return $result;
+          else
+            return null;
+}
+
+/*--------------------------------------------------------------*/
+/* Funcion Mostrar listado de valores
+/*--------------------------------------------------------------*/
+function mostrarValor($id){
+  global $db;
+          $sql = $db->query("SELECT descripcion, valor, tipo, sust_legal FROM t_valores where id = '{$id}'");
           if($result = $db->fetch_assoc($sql))
             return $result;
           else
