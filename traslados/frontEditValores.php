@@ -66,6 +66,7 @@ page_require_level(2);
                             <div class="card">
                                 <div class="card-header">
                                     <h4 class="card-title">Tabla de Valores</h4>
+                                    <div id="mensajes"></div>
                                     <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
                                         <ul class="list-inline mb-0">
@@ -139,7 +140,7 @@ page_require_level(2);
 
     <!-- BEGIN: Vendor JS-->
     <?php include (LAYOUTSAPP_PATH.'scripts.php');?>
-    <script src="../js/appDias.js"></script>
+    <script src="../js/appValores.js"></script>
     <!-- END: Page JS-->
 
 </body>

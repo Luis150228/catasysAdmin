@@ -203,7 +203,7 @@ page_require_level(2);
 
     <!-- BEGIN: Vendor JS-->
     <?php include (LAYOUTSAPP_PATH.'scripts.php');?>
-    <script src="../js/appValores.js"></script>
+    <script src="../js/appDias.js"></script>
     <!-- END: Page JS-->
 
 </body>

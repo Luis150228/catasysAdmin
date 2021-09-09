@@ -7,9 +7,9 @@
                     <ul class="menu-content">
                         <li><a class="menu-item" href="#"><i class="mbri-edit"></i><span data-i18n="Users">Variables Anuales</span></a>
                             <ul class="menu-content">
-                                <li><a class="menu-item" href="./valores.php"><i class="material-icons"></i><span data-i18n="Users List">Valores</span></a>
+                                <li><a class="menu-item" href="./frontEditValores.php"><i class="material-icons"></i><span data-i18n="Users List">Valores</span></a>
                                 </li>
-                                <li><a class="menu-item" href="./multasRecargos.php"><i class="material-icons"></i><span data-i18n="Users Edit">Multas y recargos</span></a>
+                                <li><a class="menu-item" href="./frontEditmultasRecargos.php"><i class="material-icons"></i><span data-i18n="Users Edit">Multas y recargos</span></a>
                                 </li>
                             </ul>
                         </li>
@@ -17,7 +17,7 @@
                 </li>
                 <li class=" nav-item"><a href="./frontEditDias.php"><i class="mbri-database"></i><span class="menu-title" data-i18n="Add Ons">Dias Inhabiles</span></a>
                 </li>
-                <li class=" nav-item"><a href="#"><i class="mbri-growing-chart"></i><span class="menu-title" data-i18n="Charts">Rep. Excel</span></a>
+                <li class=" nav-item"><a href="./exportReportes.php"><i class="mbri-growing-chart"></i><span class="menu-title" data-i18n="Charts">Rep. Excel</span></a>
                 <li class=" nav-item"><a href="#"><i class="material-icons"></i><span class="menu-title" data-i18n="Users">Users Profile</span></a>
                     <ul class="menu-content">
                         <li><a class="menu-item" href="#"><i class="material-icons">person_outline</i><span data-i18n="Users">Users</span></a>
@@ -30,7 +30,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class=" nav-item"><a href="https://pixinvent.ticksy.com/" target="_blank"><i class="mbri-help"></i><span class="menu-title" data-i18n="Support">Soporte</span></a>
+                <li class=" nav-item"><a href="https://catovatech.com/" target="_blank"><i class="mbri-help"></i><span class="menu-title" data-i18n="Support">Soporte</span></a>
                 </li>
             </ul>
         </div>

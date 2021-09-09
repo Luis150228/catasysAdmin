@@ -338,7 +338,7 @@ function dataValores($tipo, $descrip){
 /*--------------------------------------------------------------*/
 /* Funcion para mostrar un elemento de los vallores
 /*--------------------------------------------------------------*/
-function multas_recargos(){
+function multas_recargos_test(){
   global $db;
           $sql = $db->query("call multas_recargos('2021-06-15', '2021-08-26')");
           if($result = $db->fetch_assoc($sql))
@@ -382,6 +382,17 @@ function mostrarDias($id){
 function mostrarValor($id){
   global $db;
           $sql = $db->query("SELECT descripcion, valor, tipo, sust_legal FROM t_valores where id = '{$id}'");
+          if($result = $db->fetch_assoc($sql))
+            return $result;
+          else
+            return null;
+}
+/*--------------------------------------------------------------*/
+/* Funcion Mostrar listado de valores
+/*--------------------------------------------------------------*/
+function mostrarMultas($id){
+  global $db;
+          $sql = $db->query("SELECT rango_dias, multas, recargos, usr_mod, f_modifica FROM t_multas_recargos where id = '{$id}'");
           if($result = $db->fetch_assoc($sql))
             return $result;
           else

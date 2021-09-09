@@ -87,7 +87,7 @@ $mostrarValor = mostrarValor($_GET['id'])
                                             <p class="card-text">Modifique los valores en base a la ley de ingresos local y estatal, asi como a disposiciones administrativas publicadas en el diario oficial.</p>
                                         </div>
 
-                                        <form class="form" id="frm_Editdias" name="frm_Editdias" method="post">
+                                        <form class="form" id="frm_EditValores" name="frm_EditValores" method="post">
                                             <div class="form-body">
                                                 <h4 class="form-section"><i class="ft-dollar"></i> Valores y Sustentos Legales</h4>
                                                 <div class="row">
@@ -114,12 +114,6 @@ $mostrarValor = mostrarValor($_GET['id'])
                                                             <input data-toggle="tooltip" data-placement="top" title="Valor Anual" type="text" name="valor" id="valor" class="form-control border-primary" placeholder="Valor" value="<?php echo $mostrarValor['valor']?>">
                                                         </div>
                                                     </div>
-                                                    <!-- <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="f_fin" class="sr-only">Fin</label>
-                                                            <input data-toggle="tooltip" data-placement="top" title="Fecha Inicio" type="date" name="f_fin" id="f_fin" class="form-control border-primary" placeholder="Fecha Recepcion" value="">
-                                                        </div>
-                                                    </div> -->
                                                 </div>
                                             </div>
 

@@ -7,7 +7,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/catasysAdmin/access.php'); ///Conexion 
 ?>
 <?php
 include (INCLUDE_PATH.'load.php');
-include (LAYOUTS_PATH.'head.php');
+include (LAYOUTSAPP_PATH.'head.php');
 page_require_level(2);
 ?>
 </head>
@@ -20,12 +20,12 @@ page_require_level(2);
 <body class="vertical-layout vertical-compact-menu material-vertical-layout material-layout 2-columns   fixed-navbar" data-open="click" data-menu="vertical-compact-menu" data-col="2-columns">
 
     <!-- BEGIN: Header-->
-<?php include (LAYOUTS_PATH.'header.php');?>
+<?php include (LAYOUTSAPP_PATH.'header.php');?>
     <!-- END: Header-->
 
 
     <!-- BEGIN: Main Menu-->
-<?php include (LAYOUTS_PATH.'menu.php');?>  
+<?php include (LAYOUTSAPP_PATH.'menu.php');?>  
 
     <!-- END: Main Menu-->
     <!-- BEGIN: Content-->
@@ -38,11 +38,11 @@ page_require_level(2);
                         <div class="row breadcrumbs-top">
                             <div class="breadcrumb-wrapper col-12">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Home</a>
+                                    <li class="breadcrumb-item"><a href="../home.php">Home</a>
                                     </li>
-                                    <li class="breadcrumb-item"><a href="#">Page Layouts</a>
+                                    <li class="breadcrumb-item"><a href="#">Reportes</a>
                                     </li>
-                                    <li class="breadcrumb-item active">Dark Layout
+                                    <li class="breadcrumb-item active">Traslados
                                     </li>
                                 </ol>
                             </div>
@@ -718,12 +718,12 @@ page_require_level(2);
     <div class="drag-target"></div>
 
     <!-- BEGIN: Footer-->
-    <?php include (LAYOUTS_PATH.'footer.php');?>
+    <?php include (LAYOUTSAPP_PATH.'footer.php');?>
     <!-- END: Footer-->
 
 
     <!-- BEGIN: Vendor JS-->
-    <?php include (LAYOUTS_PATH.'scripts.php');?>
+    <?php include (LAYOUTSAPP_PATH.'scripts.php');?>
     <!-- END: Page JS-->
 
 </body>

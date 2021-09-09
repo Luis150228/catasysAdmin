@@ -10,7 +10,7 @@ include (INCLUDE_PATH.'load.php');
 include (LAYOUTSAPP_PATH.'head.php');
 page_require_level(2);
 $data_form = $_GET['id'];
-$mostrarDias = mostrarDias($_GET['id'])
+$mostrarValor = mostrarMultas($_GET['id'])
 
 ?>
 </head>
@@ -43,7 +43,7 @@ $mostrarDias = mostrarDias($_GET['id'])
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="../home.php">Home</a>
                                     </li>
-                                    <li class="breadcrumb-item"><a href="#">Dias Inhabiles</a>
+                                    <li class="breadcrumb-item"><a href="#">Multas y Recargos</a>
                                     </li>
                                     <li class="breadcrumb-item active">Sistema de Catastro
                                     </li>
@@ -67,7 +67,7 @@ $mostrarDias = mostrarDias($_GET['id'])
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Editar Dia Inhabil</h4>
+                                    <h4 class="card-title">Editar Multas y Recargos</h4>
                                     <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
                                         <ul class="list-inline mb-0">
@@ -84,32 +84,31 @@ $mostrarDias = mostrarDias($_GET['id'])
                                         <div id="mensajes"></div>
 
                                         <div class="card-text">
-                                            <p class="card-text">Capture los dias de vacaciones o inhabiles correspodientes al año actual. En caso de puentes solo poner los dias laborales que no se trabajaran por ejemplo si el puente es del viernes al martes se debe capturar 2 fechas una para el dia viernes y otra para el lunes, para no considerar los fines de semana entre estos dias.</p>
+                                            <p class="card-text">Modifique en base al rango la multa y recargo.</p>
                                         </div>
 
-                                        <form class="form" id="frm_Editdias" name="frm_Editdias" method="post">
+                                        <form class="form" id="frm_EditValores" name="frm_EditValores" method="post">
                                             <div class="form-body">
-                                                <h4 class="form-section"><i class="ft-calendar"></i> Vacaciones o dias Inhabiles</h4>
+                                                <h4 class="form-section"><i class="ft-dollar"></i> Multas y Recargos</h4>
                                                 <div class="row">
                                                     <input type="hidden" name="id" id="id" class="form-control border-primary" readonly value="<?php echo $data_form?>">
-                                                    <div class="col-md-12">
+                                                    <input type="hidden" name="usr" id="usr" class="form-control border-primary" readonly value="<?php echo remove_junk(ucfirst($user['username']));?>">
+                                                    <div class="col-md-3">
                                                         <div class="form-group">
-                                                            <label for="descripcion" class="sr-only">Descripcion</label>
-                                                            <input data-toggle="tooltip" data-placement="top" title="Descripcion" type="text" name="descripcion" id="descripcion" class="form-control border-primary" placeholder="Descripcion del dia inhabil" value="<?php echo $mostrarDias['descripcion']?>">
+                                                            <label for="f_ini" class="sr-only">Rango</label>
+                                                            <input data-toggle="tooltip" data-placement="top" title="Rango dias" type="text" name="rango" id="rango" readonly class="form-control border-primary" placeholder="Rango" value="<?php echo $mostrarValor['rango_dias']?>">
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-3">
                                                         <div class="form-group">
-                                                            <label for="f_ini" class="sr-only">Inicio</label>
-                                                            <input data-toggle="tooltip" data-placement="top" title="Fecha Inicio" type="date" name="f_ini" id="f_ini" class="form-control border-primary" placeholder="Fecha Recepcion" value="<?php echo $mostrarDias['fecha_inicio']?>">
+                                                            <label for="f_ini" class="sr-only">Multa</label>
+                                                            <input data-toggle="tooltip" data-placement="top" title="Valor Anual Multa" type="text" name="multa" id="multa" class="form-control border-primary" placeholder="Multa" value="<?php echo $mostrarValor['multas']?>">
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-6">
+                                                    <div class="col-md-3">
                                                         <div class="form-group">
-                                                            <label for="f_fin" class="sr-only">Fin</label>
-                                                            <input data-toggle="tooltip" data-placement="top" title="Fecha Inicio" type="date" name="f_fin" id="f_fin" class="form-control border-primary" placeholder="Fecha Recepcion" value="<?php echo $mostrarDias['fecha_fin']?>">
+                                                            <label for="f_ini" class="sr-only">Recargo</label>
+                                                            <input data-toggle="tooltip" data-placement="top" title="Valor Anual Recargo" type="text" maxlength="4" name="recargo" id="recargo" class="form-control border-primary" placeholder="Recargo" value="<?php echo $mostrarValor['recargos']?>">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -145,7 +144,7 @@ $mostrarDias = mostrarDias($_GET['id'])
 
     <!-- BEGIN: Vendor JS-->
     <?php include (LAYOUTSAPP_PATH.'scripts.php');?>
-    <script src="../js/appDias.js"></script>
+    <script src="../js/appMultaRecargos.js"></script>
     <!-- END: Page JS-->
 
 </body>
